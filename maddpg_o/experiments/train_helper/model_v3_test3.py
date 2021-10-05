@@ -36,6 +36,7 @@ def mlp_model_agent_p(input, num_outputs, scope, index, n_adv=2, n_good=5, n_lan
                 self_out, num_outputs=num_test, scope='l2', activation_fn=tf.nn.relu)
         # land mark mlp
         land_mark_input = input[:, 5:5+3*n_land]
+        print('DEBUG:', input, land_mark_input, n_land)
         land_mark_input = tf.split(land_mark_input, n_land, axis=1)
         # print(land_mark_input)
         # for i in range(n_land):
